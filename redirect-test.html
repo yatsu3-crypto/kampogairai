@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="転送テスト">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="2; url=https://yatsu3-crypto.github.io/genten/ls-test.html">
+<title>転送テスト｜漢方総合アプリ 実機確認</title>
+<!-- 実機確認用（1日目）。別のパス（例 /kampogairai/）に置き、ホーム画面に追加して開く。
+     2秒後に /genten/ls-test.html へ移る。移った先で「いまの開き方」が全画面のままか、Safari に切り替わったかを見る -->
+<style>
+body{margin:0;font-family:"Hiragino Sans","Yu Gothic",-apple-system,sans-serif;color:#332C25;background:#FBF5E6;text-align:center;-webkit-text-size-adjust:100%}
+main{padding:calc(env(safe-area-inset-top) + 60px) 20px 40px}
+h1{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:20px}
+a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;background:#22376B;color:#FFFCF4;font-weight:700;text-decoration:none}
+p{color:#5B5247;font-size:13px}
+</style>
+</head>
+<body>
+<main>
+  <h1>転送テスト</h1>
+  <p id="mode"></p>
+  <p>2秒後に保存テストのページへ移ります。</p>
+  <a href="https://yatsu3-crypto.github.io/genten/ls-test.html">すぐ移る</a>
+</main>
+<script>
+var standalone = (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true;
+document.getElementById("mode").textContent = "転送前の開き方：" + (standalone ? "ホーム画面アプリ（全画面）" : "Safari などのブラウザ");
+setTimeout(function(){ location.replace("https://yatsu3-crypto.github.io/genten/ls-test.html"); }, 2000);
+</script>
+</body>
+</html>
